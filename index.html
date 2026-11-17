@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paving and Building Projects | Professional Construction Contractors Sandton</title>
+    <meta name="description" content="Professional paving, building, boundary walls, tiling and renovation contractors based in Sunninghill, Sandton, Johannesburg. Quality workmanship guaranteed. Call 083 629 9911.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        graphite: {
+                            900: '#0f1115',
+                            800: '#181b22',
+                            700: '#222631',
+                            600: '#2d3342',
+                        },
+                        orange: {
+                            500: '#f97316',
+                            600: '#ea580c',
+                            700: '#c2410c',
+                        },
+                        peach: {
+                            50: '#fcf8f5',
+                            100: '#f7ede4',
+                            200: '#edd8c7',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        
+        /* Sliding Hero Background Animation across all 7 requested project pictures with smooth transitions and crystal clarity */
+        @keyframes slideHeroAll {
+            0% { opacity: 0; transform: scale(1.02) translateX(0); }
+            3% { opacity: 1; }
+            14% { opacity: 1; transform: scale(1.05) translateX(-6px); }
+            17% { opacity: 0; transform: scale(1.08) translateX(-12px); }
+            100% { opacity: 0; }
+        }
+
+        .hero-pic-1 { animation: slideHeroAll 49s infinite 0s; }
+        .hero-pic-2 { animation: slideHeroAll 49s infinite 7s; }
+        .hero-pic-3 { animation: slideHeroAll 49s infinite 14s; }
+        .hero-pic-4 { animation: slideHeroAll 49s infinite 21s; }
+        .hero-pic-5 { animation: slideHeroAll 49s infinite 28s; }
+        .hero-pic-6 { animation: slideHeroAll 49s infinite 35s; }
+        .hero-pic-7 { animation: slideHeroAll 49s infinite 42s; }
+
+        /* Crystal clear light background overlay so sliding pictures appear vibrant and clear in default day mode */
+        .hero-overlay-light {
+            background: linear-gradient(to right, rgba(252, 248, 245, 0.72), rgba(252, 248, 245, 0.48));
+        }
+        .hero-overlay-dark {
+            background: linear-gradient(to right, rgba(15, 17, 21, 0.82), rgba(15, 17, 21, 0.65));
+        }
+
+        /* Smooth Moving Entrance Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .hover-scale-card {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+        .hover-scale-card:hover {
+            transform: translateY(-6px);
+        }
+    </style>
+</head>
+<body class="bg-peach-50 text-gray-800 dark:bg-graphite-900 dark:text-gray-100 antialiased transition-colors duration-300 selection:bg-orange-500 selection:text-white">
+
+    <!-- Top Bar for Quick Info (Email Removed) -->
+    <div class="bg-peach-100 dark:bg-graphite-800 border-b border-orange-200/50 dark:border-graphite-700 text-xs sm:text-sm py-2 px-4 sm:px-8 text-gray-700 dark:text-gray-300 transition-colors">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <a href="tel:0836299911" class="hover:text-orange-600 dark:hover:text-orange-500 transition flex items-center gap-2 font-semibold">
+                    <i class="fa-solid fa-phone text-orange-500"></i> 083 629 9911
+                </a>
+                <span class="hidden md:flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-orange-500"></i> 20 Lotsani Road, Sunninghill, Sandton, 2157
+                </span>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="bg-orange-500/10 text-orange-600 dark:text-orange-400 px-2.5 py-0.5 rounded-full font-medium border border-orange-500/20">
+                    <i class="fa-solid fa-clock text-xs mr-1"></i> Open 24 Hours
+                </span>
+                
+                <!-- Day/Night Toggle Switch (Default Day Mode with White/Peach Hue) -->
+                <button id="theme-toggle" aria-label="Toggle Day/Night Mode" class="flex items-center gap-2 bg-white dark:bg-graphite-700 px-3 py-1 rounded-full border border-gray-300 dark:border-graphite-600 shadow-sm transition hover:scale-105">
+                    <i id="theme-icon" class="fa-solid fa-sun text-orange-500"></i>
+                    <span id="theme-text" class="text-xs font-bold uppercase tracking-wider">Day Mode</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Navigation Bar (5 Requested Pages: Home, Services, About Us, Gallery, Contacts) -->
+    <header class="sticky top-0 z-50 bg-white/95 dark:bg-graphite-900/95 backdrop-blur-md border-b border-orange-200/50 dark:border-graphite-700 shadow-sm transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 flex justify-between items-center h-20">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center shadow-lg shadow-orange-500/30 group-hover:scale-105 transition">
+                    <i class="fa-solid fa-hard-hat text-white text-lg"></i>
+                </div>
+                <div>
+                    <span class="block font-extrabold text-lg sm:text-xl tracking-tight text-gray-900 dark:text-white leading-none">ROCK PAVING</span>
+                    <span class="text-xs tracking-widest text-orange-600 dark:text-orange-500 font-semibold uppercase">& Building Projects</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-sm text-gray-700 dark:text-gray-300">
+                <a href="#home" class="hover:text-orange-600 dark:hover:text-orange-500 transition text-orange-600 dark:text-orange-500 font-bold">Home</a>
+                <a href="#services" class="hover:text-orange-600 dark:hover:text-orange-500 transition">Services</a>
+                <a href="#about" class="hover:text-orange-600 dark:hover:text-orange-500 transition">About Us</a>
+                <a href="#gallery" class="hover:text-orange-600 dark:hover:text-orange-500 transition">Gallery</a>
+                <a href="#contacts" class="hover:text-orange-600 dark:hover:text-orange-500 transition">Contacts</a>
+            </nav>
+
+            <!-- Action Button -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="#contacts" class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2.5 rounded-lg font-bold text-sm shadow-lg shadow-orange-500/25 transition flex items-center gap-2">
+                    <i class="fa-solid fa-file-contract"></i> Free Quote
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" aria-label="Toggle mobile menu" class="lg:hidden text-gray-700 dark:text-gray-300 hover:text-orange-600 p-2 focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-peach-100 dark:bg-graphite-800 border-b border-orange-200 dark:border-graphite-700 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" onclick="toggleMobileMenu()" class="block w-full text-left py-2 text-orange-600 font-semibold border-b border-gray-200 dark:border-graphite-700">Home</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block w-full text-left py-2 text-gray-700 dark:text-gray-300 hover:text-orange-600 border-b border-gray-200 dark:border-graphite-700">Services</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block w-full text-left py-2 text-gray-700 dark:text-gray-300 hover:text-orange-600 border-b border-gray-200 dark:border-graphite-700">About Us</a>
+            <a href="#gallery" onclick="toggleMobileMenu()" class="block w-full text-left py-2 text-gray-700 dark:text-gray-300 hover:text-orange-600 border-b border-gray-200 dark:border-graphite-700">Gallery</a>
+            <a href="#contacts" onclick="toggleMobileMenu()" class="block w-full text-left py-2 text-gray-700 dark:text-gray-300 hover:text-orange-600">Contacts</a>
+            <div class="pt-2">
+                <a href="#contacts" onclick="toggleMobileMenu()" class="w-full text-center block bg-orange-500 text-white py-3 rounded-lg font-bold shadow-md">Request a Free Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER WITH ALL SECTIONS ON HOME -->
+    <main id="home" class="scroll-mt-20">
+
+        <!-- ================= HERO SECTION WITH FULL SLIDING PICTURES ================= -->
+        <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden">
+            <!-- All 7 Requested Sliding Background Images with Crystal Clear Visibility -->
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 hero-pic-1 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/9690090/pexels-photo-9690090.jpeg?auto=compress&cs=tinysrgb&w=1600')"></div>
+                <div class="absolute inset-0 hero-pic-2 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/15591330/pexels-photo-15591330.jpeg?auto=compress&cs=tinysrgb&w=1600')"></div>
+                <div class="absolute inset-0 hero-pic-3 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/10682523/pexels-photo-10682523.jpeg?auto=compress&cs=tinysrgb&w=1600')"></div>
+                <div class="absolute inset-0 hero-pic-4 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/14911730/pexels-photo-14911730.jpeg?auto=compress&cs=tinysrgb&w=1600')"></div>
+                <div class="absolute inset-0 hero-pic-5 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/34056727/pexels-photo-34056727.jpeg?auto=compress&cs=tinysrgb&w=1600')"></div>
+                <div class="absolute inset-0 hero-pic-6 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/28379849/pexels-photo-28379849.jpeg?auto=compress&cs=tinysrgb&w=1600')"></div>
+                <div class="absolute inset-0 hero-pic-7 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/5691507/pexels-photo-5691507.jpeg?auto=compress&cs=tinysrgb&w=1600')"></div>
+                
+                <!-- Crystal Clear Light/Dark Background Overlays -->
+                <div class="absolute inset-0 hero-overlay-light dark:hero-overlay-dark"></div>
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-20 text-center lg:text-left w-full grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-8 space-y-6 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-2 bg-orange-500/15 border border-orange-500/30 px-4 py-1.5 rounded-full text-orange-600 dark:text-orange-400 font-semibold text-xs sm:text-sm backdrop-blur-sm">
+                        <i class="fa-solid fa-circle-check"></i> Sunninghill & Sandton's Premier Construction & Paving Contractor
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-gray-900 dark:text-white tracking-tight leading-none uppercase drop-shadow-sm">
+                        Building Quality. <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-700">Creating Lasting Impressions.</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-800 dark:text-gray-200 max-w-2xl font-medium leading-relaxed drop-shadow-sm">
+                        "Professional paving and building solutions delivered with precision, quality materials and reliable workmanship. From residential improvements to major commercial construction projects across Gauteng, we bring your vision to life."
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#contacts" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-xl font-bold text-base shadow-xl shadow-orange-500/35 transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-hard-hat"></i> REQUEST A FREE QUOTE
+                        </a>
+                        <a href="#services" class="bg-white/95 dark:bg-graphite-800/90 hover:bg-gray-100 dark:hover:bg-graphite-700 text-gray-900 dark:text-white border border-gray-300 dark:border-graphite-600 px-8 py-4 rounded-xl font-bold text-base transition text-center flex items-center justify-center gap-3 shadow-sm">
+                            VIEW OUR SERVICES <i class="fa-solid fa-arrow-right text-orange-500"></i>
+                        </a>
+                    </div>
+
+                    <div class="pt-6 border-t border-gray-400/40 dark:border-graphite-700/80 flex flex-wrap justify-center lg:justify-start gap-8 text-xs sm:text-sm text-gray-800 dark:text-gray-300 font-bold">
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-500"></i> Quality Workmanship</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-500"></i> Reliable Service</div>
+                        <div class="flex items-center gap-2"><i class="fa-solid fa-check text-orange-500"></i> Projects Delivered On Time</div>
+                    </div>
+                </div>
+
+                <!-- Quick Quote Card Form in Hero -->
+                <div class="lg:col-span-4 bg-white/95 dark:bg-graphite-800/95 border border-orange-200 dark:border-graphite-700 p-6 sm:p-8 rounded-2xl shadow-2xl text-left backdrop-blur-md hover-scale-card">
+                    <form id="hero-quick-form" onsubmit="handleQuickSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-600 dark:text-gray-400 mb-1">Full Name</label>
+                            <input type="text" id="quick-name" required placeholder="John Smith" class="w-full bg-peach-50 dark:bg-graphite-900 border border-gray-300 dark:border-graphite-700 rounded-lg px-4 py-3 text-sm text-gray-900 dark:text-white focus:outline-none focus:border-orange-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-600 dark:text-gray-400 mb-1">Phone Number</label>
+                            <input type="tel" id="quick-phone" required placeholder="082 123 4567" class="w-full bg-peach-50 dark:bg-graphite-900 border border-gray-300 dark:border-graphite-700 rounded-lg px-4 py-3 text-sm text-gray-900 dark:text-white focus:outline-none focus:border-orange-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-600 dark:text-gray-400 mb-1">Service Required</label>
+                            <select id="quick-service" class="w-full bg-peach-50 dark:bg-graphite-900 border border-gray-300 dark:border-graphite-700 rounded-lg px-4 py-3 text-sm text-gray-900 dark:text-white focus:outline-none focus:border-orange-500">
+                                <option>Paving Installations</option>
+                                <option>Building Construction</option>
+                                <option>Boundary Walls</option>
+                                <option>Wall Tiling</option>
+                                <option>Floor Covering</option>
+                                <option>Renovations & Improvements</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3.5 rounded-lg shadow-lg shadow-orange-500/20 transition flex items-center justify-center gap-2">
+                            <span>SUBMIT ENQUIRY</span> <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Bar -->
+        <section class="bg-peach-100 dark:bg-graphite-800 border-y border-orange-200 dark:border-graphite-700 py-12 transition-colors">
+            <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-black text-orange-600 dark:text-orange-500">100+</div>
+                    <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider font-semibold">Projects Completed</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-black text-orange-600 dark:text-orange-500">15+</div>
+                    <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider font-semibold">Years Experience</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-black text-orange-600 dark:text-orange-500">06</div>
+                    <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider font-semibold">Core Services Offered</div>
+                </div>
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-black text-orange-600 dark:text-orange-500">100%</div>
+                    <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider font-semibold">Client Satisfaction</div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= SERVICES SECTION ================= -->
+        <section id="services" class="py-20 max-w-7xl mx-auto px-4 sm:px-8 space-y-16 scroll-mt-20">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <div class="inline-flex items-center gap-2 bg-orange-500/10 text-orange-600 dark:text-orange-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-layer-group"></i> What We Offer
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 dark:text-white">Our Professional Services</h2>
+                <p class="text-gray-600 dark:text-gray-400 text-base">Comprehensive construction, paving, walling, tiling, and property improvement solutions tailored for elite residential and commercial clients across Gauteng.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 01: Paving Installations (William Adams Photo) -->
+                <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 rounded-2xl overflow-hidden shadow-sm hover-scale-card flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://images.pexels.com/photos/9690090/pexels-photo-9690090.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Paving Installations by William Adams" class="w-full h-full object-cover transition duration-700 hover:scale-110">
+                            <span class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-extrabold px-3 py-1 rounded-md shadow">01</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Paving Installations</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Expert residential & commercial paving, interlocking bricks, robust driveways, walkways, outdoor entertainment patios, parking areas, and custom paving designs built to endure heavy vehicle traffic.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectServiceForQuote('Paving Installations')" class="w-full bg-peach-100 dark:bg-graphite-900 hover:bg-orange-500 text-gray-800 hover:text-white font-semibold py-3 rounded-xl border border-orange-200 dark:border-graphite-700 transition text-sm flex items-center justify-center gap-2">
+                            <span>Request a Quote</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 02 -->
+                <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 rounded-2xl overflow-hidden shadow-sm hover-scale-card flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://images.pexels.com/photos/37431888/pexels-photo-37431888.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Building Construction by Xayriddin Baxromxo'jayev" class="w-full h-full object-cover transition duration-700 hover:scale-110">
+                            <span class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-extrabold px-3 py-1 rounded-md shadow">02</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Building Construction</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Residential and commercial building construction, general building works, multi-story extensions, foundational structural improvements, and comprehensive property developments managed by certified supervisors.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectServiceForQuote('Building Construction')" class="w-full bg-peach-100 dark:bg-graphite-900 hover:bg-orange-500 text-gray-800 hover:text-white font-semibold py-3 rounded-xl border border-orange-200 dark:border-graphite-700 transition text-sm flex items-center justify-center gap-2">
+                            <span>Request a Quote</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 03 -->
+                <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 rounded-2xl overflow-hidden shadow-sm hover-scale-card flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://images.pexels.com/photos/3993513/pexels-photo-3993513.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Boundary Walls by MADDOG Video Creations" class="w-full h-full object-cover transition duration-700 hover:scale-110">
+                            <span class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-extrabold px-3 py-1 rounded-md shadow">03</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Boundary Walls</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Brick boundary walls, security perimeter walls, wall extensions, structural reinforcement, maintenance repairs, and bespoke architectural walling solutions for complete estate privacy and safety.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectServiceForQuote('Boundary Walls')" class="w-full bg-peach-100 dark:bg-graphite-900 hover:bg-orange-500 text-gray-800 hover:text-white font-semibold py-3 rounded-xl border border-orange-200 dark:border-graphite-700 transition text-sm flex items-center justify-center gap-2">
+                            <span>Request a Quote</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 04 -->
+                <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 rounded-2xl overflow-hidden shadow-sm hover-scale-card flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80" alt="Wall Tiling" class="w-full h-full object-cover transition duration-700 hover:scale-110">
+                            <span class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-extrabold px-3 py-1 rounded-md shadow">04</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Wall Tiling</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Interior & exterior wall tiling, luxury bathroom wall tiles, kitchen splashbacks, decorative wall finishes, and precision tile installation executed with zero-tolerance alignment and premium grouting.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectServiceForQuote('Wall Tiling')" class="w-full bg-peach-100 dark:bg-graphite-900 hover:bg-orange-500 text-gray-800 hover:text-white font-semibold py-3 rounded-xl border border-orange-200 dark:border-graphite-700 transition text-sm flex items-center justify-center gap-2">
+                            <span>Request a Quote</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 05: Floor Covering (Beyzanur K. Photo) -->
+                <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 rounded-2xl overflow-hidden shadow-sm hover-scale-card flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://images.pexels.com/photos/28379849/pexels-photo-28379849.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Floor Covering by Beyzanur K." class="w-full h-full object-cover transition duration-700 hover:scale-110">
+                            <span class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-extrabold px-3 py-1 rounded-md shadow">05</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Floor Covering</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Floor covering installations, subfloor screeding and preparation, residential & commercial floor finishes, tile and laminated flooring, and complete flooring renovations.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectServiceForQuote('Floor Covering')" class="w-full bg-peach-100 dark:bg-graphite-900 hover:bg-orange-500 text-gray-800 hover:text-white font-semibold py-3 rounded-xl border border-orange-200 dark:border-graphite-700 transition text-sm flex items-center justify-center gap-2">
+                            <span>Request a Quote</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 06: Renovations and Improvements (Ksenia Chernaya Photo) -->
+                <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 rounded-2xl overflow-hidden shadow-sm hover-scale-card flex flex-col justify-between">
+                    <div>
+                        <div class="relative h-56 overflow-hidden">
+                            <img src="https://images.pexels.com/photos/5691507/pexels-photo-5691507.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Renovations by Ksenia Chernaya" class="w-full h-full object-cover transition duration-700 hover:scale-110">
+                            <span class="absolute top-4 left-4 bg-orange-500 text-white text-xs font-extrabold px-3 py-1 rounded-md shadow">06</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">Renovations & Improvements</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">General property renovations, residential home upgrades, commercial office transformations, structural repairs, and comprehensive interior & exterior property improvements.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectServiceForQuote('Renovations and Property Improvements')" class="w-full bg-peach-100 dark:bg-graphite-900 hover:bg-orange-500 text-gray-800 hover:text-white font-semibold py-3 rounded-xl border border-orange-200 dark:border-graphite-700 transition text-sm flex items-center justify-center gap-2">
+                            <span>Request a Quote</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= ABOUT US SECTION ================= -->
+        <section id="about" class="py-20 bg-peach-100/50 dark:bg-graphite-800/50 border-y border-orange-200/50 dark:border-graphite-700 scroll-mt-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-8 space-y-16">
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <div class="inline-flex items-center gap-2 bg-orange-500/10 text-orange-600 dark:text-orange-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-shield-halved"></i> Company Profile
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 dark:text-white">Building Trust Through Quality Workmanship</h2>
+                    <p class="text-gray-600 dark:text-gray-400 text-base">Rock Paving and Building Projects is a premier construction and paving contractor based in Sunninghill, Sandton, serving the broader Johannesburg and Gauteng region with distinction.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-6 space-y-6">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Professional Construction & Paving Excellence</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-base leading-relaxed">
+                            We specialise in robust structural building, immaculate paving, boundary walls, tiling and sophisticated home or commercial property renovations. Our team adheres to strict safety protocols and delivers exceptional craftsmanship on every single site.
+                        </p>
+                        <div class="bg-white dark:bg-graphite-800 border-l-4 border-orange-500 p-6 rounded-r-xl italic text-gray-800 dark:text-gray-200 text-sm font-medium shadow-md">
+                            "We are exceptionally well-organised construction and paving contractors who deliver high-quality projects, skilled workmanship and materials on time and within budget."
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                            <div class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 font-medium">
+                                <i class="fa-solid fa-circle-check text-orange-500"></i> Professional Project Execution
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 font-medium">
+                                <i class="fa-solid fa-circle-check text-orange-500"></i> Skilled Construction Artisans
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 font-medium">
+                                <i class="fa-solid fa-circle-check text-orange-500"></i> Premium Durable Materials
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300 font-medium">
+                                <i class="fa-solid fa-circle-check text-orange-500"></i> Strict Deadline Adherence
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6 relative">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-orange-200 dark:border-graphite-700">
+                            <img src="https://images.unsplash.com/photo-1541888946425-d0fbb18f249d?auto=format&fit=crop&w=1000&q=80" alt="Construction site in Sandton" class="w-full h-[450px] object-cover" onerror="this.src='https://placehold.co/800x600/f7ede4/f97316?text=Rock+Paving+Projects'">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Why Choose Us Grid Inside About -->
+                <div class="pt-12 border-t border-orange-200 dark:border-graphite-700 space-y-12">
+                    <h3 class="text-2xl font-bold text-center text-gray-900 dark:text-white">Why Choose Rock Paving & Building</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 p-8 rounded-2xl shadow-sm">
+                            <div class="w-12 h-12 bg-orange-500/10 text-orange-600 dark:text-orange-500 rounded-xl flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-hammer"></i></div>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Quality Workmanship</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">We focus on delivering professional results with uncompromising attention to structural integrity.</p>
+                        </div>
+                        <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 p-8 rounded-2xl shadow-sm">
+                            <div class="w-12 h-12 bg-orange-500/10 text-orange-600 dark:text-orange-500 rounded-xl flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-clock"></i></div>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Reliable Project Delivery</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">We value strict deadlines, ensuring property improvements are completed on schedule.</p>
+                        </div>
+                        <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 p-8 rounded-2xl shadow-sm">
+                            <div class="w-12 h-12 bg-orange-500/10 text-orange-600 dark:text-orange-500 rounded-xl flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-cubes"></i></div>
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Quality Materials</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">We prioritize heavy-duty, durable construction materials designed for South African conditions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- South African Client Testimonials -->
+                <div class="pt-12 border-t border-orange-200 dark:border-graphite-700 space-y-8">
+                    <div class="text-center max-w-2xl mx-auto space-y-2">
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white">South African Client Testimonials</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Read verified feedback from satisfied property owners across Sandton, Bryanston, and Johannesburg.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                        <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 p-8 rounded-2xl shadow-sm space-y-4">
+                            <div class="flex items-center gap-1 text-orange-500 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 dark:text-gray-300 italic leading-relaxed">"Rock Paving transformed our entire driveway and paved parking area in Bryanston with interlocking bricks. Exceptionally professional team and immaculate attention to detail!"</p>
+                            <div>
+                                <h5 class="font-bold text-gray-900 dark:text-white text-sm">Pieter Van Der Merwe</h5>
+                                <span class="text-xs text-orange-600 dark:text-orange-400">Bryanston Residential Client</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 p-8 rounded-2xl shadow-sm space-y-4">
+                            <div class="flex items-center gap-1 text-orange-500 text-sm">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-sm text-gray-700 dark:text-gray-300 italic leading-relaxed">"We contracted them for our commercial perimeter boundary wall and wall tiling in Sandton. Delivered strictly on time and within budget. Highly recommended!"</p>
+                            <div>
+                                <h5 class="font-bold text-gray-900 dark:text-white text-sm">Nomusa Dlamini</h5>
+                                <span class="text-xs text-orange-600 dark:text-orange-400">Sandton Business Park Manager</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frequently Asked Questions Section -->
+                <div class="pt-12 border-t border-orange-200 dark:border-graphite-700 space-y-8">
+                    <div class="text-center max-w-2xl mx-auto space-y-2">
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white">Frequently Asked Questions</h3>
+                        <p class="text-sm text-gray-600 dark:text-gray-400">Answers to common enquiries regarding our construction and paving services in Johannesburg.</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                        <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 p-6 rounded-2xl space-y-2">
+                            <h4 class="font-bold text-gray-900 dark:text-white text-base flex items-center gap-2">
+                                <i class="fa-solid fa-circle-question text-orange-500"></i> Are you available for projects outside Sunninghill?
+                            </h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Yes! While our headquarters is located at 20 Lotsani Road, Sunninghill, we service all of Sandton, Rivonia, Morningside, Fourways, Midrand, Bryanston, and the greater Gauteng region.</p>
+                        </div>
+
+                        <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 p-6 rounded-2xl space-y-2">
+                            <h4 class="font-bold text-gray-900 dark:text-white text-base flex items-center gap-2">
+                                <i class="fa-solid fa-circle-question text-orange-500"></i> Do you provide free quotations for paving and building?
+                            </h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Absolutely. We offer comprehensive site assessments and transparent, competitive quotations with no hidden fees attached.</p>
+                        </div>
+
+                        <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 p-6 rounded-2xl space-y-2">
+                            <h4 class="font-bold text-gray-900 dark:text-white text-base flex items-center gap-2">
+                                <i class="fa-solid fa-circle-question text-orange-500"></i> What operating hours do you keep?
+                            </h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">We are open 24 hours to accommodate urgent client enquiries, emergency structural repairs, and flexible commercial project scheduling.</p>
+                        </div>
+
+                        <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 p-6 rounded-2xl space-y-2">
+                            <h4 class="font-bold text-gray-900 dark:text-white text-base flex items-center gap-2">
+                                <i class="fa-solid fa-circle-question text-orange-500"></i> Are your paving and building projects guaranteed?
+                            </h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Yes, we take immense pride in our skilled workmanship and high-grade materials, backing our installations with professional guarantees.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= GALLERY SECTION ================= -->
+        <section id="gallery" class="py-20 max-w-7xl mx-auto px-4 sm:px-8 space-y-12 scroll-mt-20">
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <div class="inline-flex items-center gap-2 bg-orange-500/10 text-orange-600 dark:text-orange-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-images"></i> Project Portfolio
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 dark:text-white">Our Project Gallery</h2>
+                <p class="text-gray-600 dark:text-gray-400 text-base">Explore high-resolution examples of our paving, building, boundary walls, tiling, and property renovation craftsmanship across Sandton and Johannesburg.</p>
+            </div>
+
+            <!-- Portfolio Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2">
+                <button onclick="filterPortfolio('all')" class="portfolio-btn active bg-orange-500 text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-wide transition shadow">All Projects</button>
+                <button onclick="filterPortfolio('paving')" class="portfolio-btn bg-white dark:bg-graphite-800 text-gray-700 dark:text-gray-300 hover:text-orange-600 px-5 py-2.5 rounded-full text-xs font-bold tracking-wide transition border border-orange-200 dark:border-graphite-700">Paving</button>
+                <button onclick="filterPortfolio('building')" class="portfolio-btn bg-white dark:bg-graphite-800 text-gray-700 dark:text-gray-300 hover:text-orange-600 px-5 py-2.5 rounded-full text-xs font-bold tracking-wide transition border border-orange-200 dark:border-graphite-700">Building</button>
+                <button onclick="filterPortfolio('walls')" class="portfolio-btn bg-white dark:bg-graphite-800 text-gray-700 dark:text-gray-300 hover:text-orange-600 px-5 py-2.5 rounded-full text-xs font-bold tracking-wide transition border border-orange-200 dark:border-graphite-700">Boundary Walls</button>
+                <button onclick="filterPortfolio('tiling')" class="portfolio-btn bg-white dark:bg-graphite-800 text-gray-700 dark:text-gray-300 hover:text-orange-600 px-5 py-2.5 rounded-full text-xs font-bold tracking-wide transition border border-orange-200 dark:border-graphite-700">Tiling & Flooring</button>
+                <button onclick="filterPortfolio('renovations')" class="portfolio-btn bg-white dark:bg-graphite-800 text-gray-700 dark:text-gray-300 hover:text-orange-600 px-5 py-2.5 rounded-full text-xs font-bold tracking-wide transition border border-orange-200 dark:border-graphite-700">Renovations</button>
+            </div>
+
+            <!-- Masonry Grid with Specific Pexels Photos -->
+            <div id="portfolio-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div onclick="openProjectModal('Interlocking Driveway Paving', 'Sandton Residential Property', 'https://images.pexels.com/photos/15591330/pexels-photo-15591330.jpeg?auto=compress&cs=tinysrgb&w=800', 'Complete installation of heavy-duty interlocking paving stones for a luxury Sandton residential driveway, ensuring optimal slope drainage and vehicle load durability.')" class="portfolio-item paving cursor-pointer bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 rounded-2xl overflow-hidden shadow-sm hover-scale-card group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/15591330/pexels-photo-15591330.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ground view of grey paving by Andrew Main Oster" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-85"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="text-xs bg-orange-500 text-white px-2.5 py-1 rounded font-semibold uppercase">Paving</span>
+                            <h4 class="text-white font-bold text-lg mt-1">Interlocking Driveway Paving</h4>
+                            <p class="text-xs text-gray-300">Sandton Residential Property</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openProjectModal('Commercial Structure Extension', 'Midrand Business Park', 'https://images.pexels.com/photos/37431888/pexels-photo-37431888.jpeg?auto=compress&cs=tinysrgb&w=800', 'Structural expansion and multi-story brickwork construction executed for a busy commercial business park in Midrand.')" class="portfolio-item building cursor-pointer bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 rounded-2xl overflow-hidden shadow-sm hover-scale-card group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/37431888/pexels-photo-37431888.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Urban construction site with crane by Xayriddin Baxromxo'jayev" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-85"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="text-xs bg-orange-500 text-white px-2.5 py-1 rounded font-semibold uppercase">Building</span>
+                            <h4 class="text-white font-bold text-lg mt-1">Commercial Structure Extension</h4>
+                            <p class="text-xs text-gray-300">Midrand Business Park</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openProjectModal('Brick Perimeter Boundary Wall', 'Sunninghill Residential Estate', 'https://images.pexels.com/photos/3993513/pexels-photo-3993513.jpeg?auto=compress&cs=tinysrgb&w=800', 'High-strength face brick boundary wall with reinforced pillars constructed for maximum estate security and curb appeal.')" class="portfolio-item walls cursor-pointer bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 rounded-2xl overflow-hidden shadow-sm hover-scale-card group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/3993513/pexels-photo-3993513.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Black metal wire fence near brown concrete building by MADDOG Video Creations" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-85"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="text-xs bg-orange-500 text-white px-2.5 py-1 rounded font-semibold uppercase">Boundary Walls</span>
+                            <h4 class="text-white font-bold text-lg mt-1">Brick Perimeter Boundary Wall</h4>
+                            <p class="text-xs text-gray-300">Sunninghill Residential Estate</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openProjectModal('Luxury Bathroom Wall Tiling', 'Bryanston Modern Home', 'https://images.pexels.com/photos/34056727/pexels-photo-34056727.jpeg?auto=compress&cs=tinysrgb&w=800', 'Precision large-format porcelain wall tiling with laser alignment and seamless grouting in a luxury Bryanston home.')" class="portfolio-item tiling cursor-pointer bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 rounded-2xl overflow-hidden shadow-sm hover-scale-card group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/34056727/pexels-photo-34056727.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Modern cafe exterior with lush greenery by Thang Nguyen" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-85"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="text-xs bg-orange-500 text-white px-2.5 py-1 rounded font-semibold uppercase">Tiling</span>
+                            <h4 class="text-white font-bold text-lg mt-1">Luxury Bathroom Wall Tiling</h4>
+                            <p class="text-xs text-gray-300">Bryanston Modern Home</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openProjectModal('Complete Property Upgrade', 'Rivonia Commercial Complex', 'https://images.pexels.com/photos/34973246/pexels-photo-34973246.jpeg?auto=compress&cs=tinysrgb&w=800', 'Full interior and exterior property transformation, floor finishes, and structural improvements for a high-end office complex.')" class="portfolio-item renovations cursor-pointer bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 rounded-2xl overflow-hidden shadow-sm hover-scale-card group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/34973246/pexels-photo-34973246.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Modern residential buildings on sunny street corner by Robert So" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-85"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="text-xs bg-orange-500 text-white px-2.5 py-1 rounded font-semibold uppercase">Renovations</span>
+                            <h4 class="text-white font-bold text-lg mt-1">Complete Property Upgrade</h4>
+                            <p class="text-xs text-gray-300">Rivonia Commercial Complex</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openProjectModal('Garden Walkways & Patios', 'Fourways Residential Project', 'https://images.pexels.com/photos/36779943/pexels-photo-36779943.jpeg?auto=compress&cs=tinysrgb&w=800', 'Custom designed outdoor stone paving and garden walkways connecting entertainment entertainment areas.')" class="portfolio-item paving cursor-pointer bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 rounded-2xl overflow-hidden shadow-sm hover-scale-card group">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.pexels.com/photos/36779943/pexels-photo-36779943.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Curved brick pathway in urban garden setting by Sergej" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent opacity-85"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <span class="text-xs bg-orange-500 text-white px-2.5 py-1 rounded font-semibold uppercase">Paving</span>
+                            <h4 class="text-white font-bold text-lg mt-1">Garden Walkways & Patios</h4>
+                            <p class="text-xs text-gray-300">Fourways Residential Project</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= CONTACTS & QUOTATION SECTION ================= -->
+        <section id="contacts" class="py-20 max-w-7xl mx-auto px-4 sm:px-8 space-y-16 scroll-mt-20">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <div class="inline-flex items-center gap-2 bg-orange-500/10 text-orange-600 dark:text-orange-400 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-paper-plane"></i> Get In Touch
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 dark:text-white leading-tight">
+                    LET'S BUILD SOMETHING GREAT TOGETHER.
+                </h2>
+                <p class="text-gray-600 dark:text-gray-300 text-base leading-relaxed">
+                    Have a paving, building or renovation project in mind? Contact our team today to discuss your requirements and receive a competitive quotation.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 p-8 rounded-2xl text-center space-y-3 shadow-sm">
+                    <div class="w-12 h-12 bg-orange-500/10 text-orange-600 dark:text-orange-500 rounded-xl flex items-center justify-center mx-auto text-xl">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 dark:text-white text-base">Telephone</h4>
+                    <a href="tel:0836299911" class="text-orange-600 dark:text-orange-500 font-extrabold text-lg block hover:underline">083 629 9911</a>
+                    <span class="text-xs text-gray-500">Available 24 Hours</span>
+                </div>
+
+                <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 p-8 rounded-2xl text-center space-y-3 shadow-sm">
+                    <div class="w-12 h-12 bg-orange-500/10 text-orange-600 dark:text-orange-500 rounded-xl flex items-center justify-center mx-auto text-xl">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 dark:text-white text-base">Physical Address</h4>
+                    <p class="text-xs text-gray-600 dark:text-gray-300 font-medium">20 Lotsani Road, Sunninghill, Sandton, 2157, South Africa</p>
+                </div>
+
+                <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 p-8 rounded-2xl text-center space-y-3 shadow-sm">
+                    <div class="w-12 h-12 bg-orange-500/10 text-orange-600 dark:text-orange-500 rounded-xl flex items-center justify-center mx-auto text-xl">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-900 dark:text-white text-base">Operating Hours</h4>
+                    <p class="text-xs text-gray-600 dark:text-gray-300 font-medium">Open 24 Hours Daily</p>
+                </div>
+            </div>
+
+            <!-- Quotation Form Positioned Below -->
+            <div class="max-w-4xl mx-auto bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 p-8 sm:p-12 rounded-2xl shadow-xl">
+                <div class="text-center space-y-2 mb-8">
+                    <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Request My Quotation</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">Fill in the form below and our professional estimating team will respond promptly.</p>
+                </div>
+                
+                <form id="enquiry-form" onsubmit="handleEnquirySubmit(event)" class="space-y-6">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-600 dark:text-gray-400 mb-2">Full Name *</label>
+                            <input type="text" id="form-name" required placeholder="John Smith" class="w-full bg-peach-50 dark:bg-graphite-900 border border-gray-300 dark:border-graphite-700 rounded-xl px-4 py-3.5 text-sm text-gray-900 dark:text-white focus:outline-none focus:border-orange-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-600 dark:text-gray-400 mb-2">Phone Number *</label>
+                            <input type="tel" id="form-phone" required placeholder="082 123 4567" class="w-full bg-peach-50 dark:bg-graphite-900 border border-gray-300 dark:border-graphite-700 rounded-xl px-4 py-3.5 text-sm text-gray-900 dark:text-white focus:outline-none focus:border-orange-500">
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-600 dark:text-gray-400 mb-2">Email Address *</label>
+                            <input type="email" id="form-email" required placeholder="john@example.com" class="w-full bg-peach-50 dark:bg-graphite-900 border border-gray-300 dark:border-graphite-700 rounded-xl px-4 py-3.5 text-sm text-gray-900 dark:text-white focus:outline-none focus:border-orange-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold uppercase text-gray-600 dark:text-gray-400 mb-2">Service Required *</label>
+                            <select id="form-service" class="w-full bg-peach-50 dark:bg-graphite-900 border border-gray-300 dark:border-graphite-700 rounded-xl px-4 py-3.5 text-sm text-gray-900 dark:text-white focus:outline-none focus:border-orange-500">
+                                <option>Paving Installations</option>
+                                <option>Building Construction</option>
+                                <option>Boundary Walls</option>
+                                <option>Wall Tiling</option>
+                                <option>Floor Covering</option>
+                                <option>Renovations and Property Improvements</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-600 dark:text-gray-400 mb-2">Project Location / Suburb *</label>
+                        <input type="text" id="form-location" required placeholder="e.g. Sandton, Sunninghill, Bryanston" class="w-full bg-peach-50 dark:bg-graphite-900 border border-gray-300 dark:border-graphite-700 rounded-xl px-4 py-3.5 text-sm text-gray-900 dark:text-white focus:outline-none focus:border-orange-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold uppercase text-gray-600 dark:text-gray-400 mb-2">Project Description *</label>
+                        <textarea id="form-desc" rows="4" required placeholder="Describe your project requirements..." class="w-full bg-peach-50 dark:bg-graphite-900 border border-gray-300 dark:border-graphite-700 rounded-xl px-4 py-3.5 text-sm text-gray-900 dark:text-white focus:outline-none focus:border-orange-500"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-orange-500/25 transition text-base flex items-center justify-center gap-2">
+                        <span>REQUEST MY QUOTATION</span> <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Google Map Integration Section -->
+            <div class="h-96 w-full relative bg-peach-100 dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 rounded-2xl overflow-hidden shadow-sm">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.2885489818816!2d28.0772!3d-26.0454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9573c7e3f815b5%3A0x673995874c7e6c!2s20%20Lotsani%20Rd%2C%20Sunninghill%2C%20Sandton%2C%202157%2C%20South%20Africa!5e0!3m2!1sen!2sus!4v1650000000000!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    class="opacity-90">
+                </iframe>
+                <div class="absolute bottom-6 left-6 bg-white dark:bg-graphite-900/95 backdrop-blur-md p-4 rounded-xl border border-orange-200 dark:border-graphite-700 shadow-xl max-w-xs">
+                    <h4 class="text-gray-900 dark:text-white font-bold text-sm mb-1">Rock Paving & Building Projects</h4>
+                    <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">20 Lotsani Road, Sunninghill, Sandton, 2157</p>
+                    <a href="https://maps.google.com/?q=20+Lotsani+Road,+Sunninghill,+Sandton,+2157,+South+Africa" target="_blank" class="block w-full text-center bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold py-2 rounded-lg shadow transition">
+                        GET DIRECTIONS
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Floating WhatsApp Toggle Below Right -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <a href="https://wa.me/27836299911?text=Hello%20Rock%20Paving%20and%20Building,%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" aria-label="Chat on WhatsApp" class="w-14 h-14 bg-green-600 hover:bg-green-700 text-white rounded-full flex items-center justify-center text-2xl shadow-2xl transition transform hover:scale-110">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-peach-100 dark:bg-graphite-900 border-t border-orange-200 dark:border-graphite-700 text-gray-700 dark:text-gray-400 text-sm py-16 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-lg bg-orange-500 flex items-center justify-center text-white font-bold">
+                        <i class="fa-solid fa-hard-hat"></i>
+                    </div>
+                    <span class="font-extrabold text-gray-900 dark:text-white text-base tracking-tight">ROCK PAVING</span>
+                </div>
+                <p class="text-xs text-gray-600 dark:text-gray-400 italic">"Building Quality. Creating Lasting Impressions."</p>
+                <p class="text-xs text-gray-600 dark:text-gray-400">Professional construction, paving and building contractors based in Sunninghill, Sandton, serving Gauteng.</p>
+                <div class="flex items-center gap-3 pt-2">
+                    <a href="#" aria-label="Facebook" class="w-8 h-8 rounded-lg bg-white dark:bg-graphite-800 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-orange-500 shadow-sm transition"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                    <a href="#" aria-label="LinkedIn" class="w-8 h-8 rounded-lg bg-white dark:bg-graphite-800 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-orange-500 shadow-sm transition"><i class="fa-brands fa-linkedin-in text-xs"></i></a>
+                    <a href="https://wa.me/27836299911" target="_blank" aria-label="WhatsApp" class="w-8 h-8 rounded-lg bg-white dark:bg-graphite-800 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:text-orange-500 shadow-sm transition"><i class="fa-brands fa-whatsapp text-xs"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-gray-900 dark:text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-orange-200 dark:border-graphite-700 pb-2">Quick Pages</h4>
+                <ul class="space-y-2 text-xs font-medium">
+                    <li><a href="#home" class="hover:text-orange-600 dark:hover:text-orange-500 transition">Home</a></li>
+                    <li><a href="#services" class="hover:text-orange-600 dark:hover:text-orange-500 transition">Services</a></li>
+                    <li><a href="#about" class="hover:text-orange-600 dark:hover:text-orange-500 transition">About Us</a></li>
+                    <li><a href="#gallery" class="hover:text-orange-600 dark:hover:text-orange-500 transition">Gallery</a></li>
+                    <li><a href="#contacts" class="hover:text-orange-600 dark:hover:text-orange-500 transition">Contacts</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-gray-900 dark:text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-orange-200 dark:border-graphite-700 pb-2">Services</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#services" class="hover:text-orange-600 dark:hover:text-orange-500 transition">Paving Installations</a></li>
+                    <li><a href="#services" class="hover:text-orange-600 dark:hover:text-orange-500 transition">Building Construction</a></li>
+                    <li><a href="#services" class="hover:text-orange-600 dark:hover:text-orange-500 transition">Boundary Walls</a></li>
+                    <li><a href="#services" class="hover:text-orange-600 dark:hover:text-orange-500 transition">Wall Tiling</a></li>
+                    <li><a href="#services" class="hover:text-orange-600 dark:hover:text-orange-500 transition">Floor Covering</a></li>
+                    <li><a href="#services" class="hover:text-orange-600 dark:hover:text-orange-500 transition">Renovations & Improvements</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-gray-900 dark:text-white font-bold text-sm uppercase tracking-wider mb-4 border-b border-orange-200 dark:border-graphite-700 pb-2">Contact Details</h4>
+                <ul class="space-y-3 text-xs">
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-phone text-orange-500 mt-0.5"></i>
+                        <a href="tel:0836299911" class="text-gray-900 dark:text-white font-semibold hover:text-orange-600">083 629 9911</a>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-location-dot text-orange-500 mt-0.5"></i>
+                        <span>20 Lotsani Road, Sunninghill, Sandton, 2157, South Africa</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-clock text-orange-500 mt-0.5"></i>
+                        <span>Open 24 Hours</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 mt-12 pt-8 border-t border-orange-200 dark:border-graphite-800 text-center text-xs text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p>&copy; 2026 Rock Paving and Building Projects. All rights reserved.</p>
+            <p>Professional Construction & Paving Contractors in Sunninghill, Sandton, Johannesburg.</p>
+        </div>
+    </footer>
+
+    <!-- Custom Modal for Success Messages -->
+    <div id="success-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 p-8 rounded-2xl max-w-md w-full text-center space-y-4 shadow-2xl">
+            <div class="w-16 h-16 bg-green-500/10 text-green-500 border border-green-500/30 rounded-full flex items-center justify-center mx-auto text-2xl">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Enquiry Received!</h3>
+            <p id="modal-msg" class="text-sm text-gray-600 dark:text-gray-300">Thank you for contacting Rock Paving and Building Projects. Our team will review your requirements and get in touch with you shortly.</p>
+            <button onclick="closeModal()" class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 rounded-xl transition">
+                OKAY
+            </button>
+        </div>
+    </div>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-graphite-800 border border-orange-200 dark:border-graphite-700 max-w-2xl w-full rounded-2xl overflow-hidden shadow-2xl relative">
+            <button onclick="closeProjectModal()" aria-label="Close modal" class="absolute top-4 right-4 z-10 w-10 h-10 bg-black/60 text-white rounded-full flex items-center justify-center hover:bg-orange-500 transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="modal-img-src" src="" alt="Project detail" class="w-full h-72 object-cover">
+            <div class="p-8 space-y-4">
+                <span id="modal-cat" class="text-xs bg-orange-500 text-white px-3 py-1 rounded-full font-bold uppercase"></span>
+                <h3 id="modal-title" class="text-2xl font-extrabold text-gray-900 dark:text-white"></h3>
+                <p id="modal-location-text" class="text-xs font-semibold text-orange-600 dark:text-orange-400"></p>
+                <p id="modal-desc" class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed"></p>
+                <div class="pt-4 flex gap-4">
+                    <button onclick="closeProjectModal(); location.href='#contacts';" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-xl text-sm transition">
+                        Request Similar Project Quote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        // Day/Night Toggle Switch (Default Day Mode with Peach/White background)
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeText = document.getElementById('theme-text');
+        const htmlElement = document.documentElement;
+
+        themeToggleBtn.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            if(htmlElement.classList.contains('dark')) {
+                themeIcon.className = "fa-solid fa-moon text-orange-400";
+                themeText.textContent = "Night Mode";
+            } else {
+                themeIcon.className = "fa-solid fa-sun text-orange-500";
+                themeText.textContent = "Day Mode";
+            }
+        });
+
+        // Quick Quote selection handler
+        function selectServiceForQuote(serviceName) {
+            location.href = '#contacts';
+            const serviceSelect = document.getElementById('form-service');
+            for(let i=0; i<serviceSelect.options.length; i++) {
+                if(serviceSelect.options[i].text === serviceName) {
+                    serviceSelect.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // Quick Hero Form Submit
+        function handleQuickSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('quick-name').value;
+            const phone = document.getElementById('quick-phone').value;
+            const service = document.getElementById('quick-service').value;
+
+            document.getElementById('modal-msg').innerHTML = `Thank you <b>${name}</b>. We have received your quick enquiry for <b>${service}</b> and will call you back at <b>${phone}</b> shortly.`;
+            document.getElementById('success-modal').classList.remove('hidden');
+            document.getElementById('hero-quick-form').reset();
+        }
+
+        // Main Enquiry Form Submit
+        function handleEnquirySubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const service = document.getElementById('form-service').value;
+            const location = document.getElementById('form-location').value;
+
+            document.getElementById('modal-msg').innerHTML = `Thank you <b>${name}</b>. Your quotation request for <b>${service}</b> in <b>${location}</b> has been received successfully!`;
+            document.getElementById('success-modal').classList.remove('hidden');
+            document.getElementById('enquiry-form').reset();
+        }
+
+        function closeModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        // Project Detail Modal
+        function openProjectModal(title, location, imgSrc, desc) {
+            document.getElementById('modal-title').textContent = title;
+            document.getElementById('modal-location-text').textContent = location;
+            document.getElementById('modal-img-src').src = imgSrc;
+            document.getElementById('modal-desc').textContent = desc;
+            document.getElementById('modal-cat').textContent = title.includes('Paving') ? 'Paving' : (title.includes('Building') ? 'Building' : (title.includes('Wall') ? 'Boundary Walls' : (title.includes('Tiling') ? 'Tiling' : 'Renovations')));
+            document.getElementById('project-modal').classList.remove('hidden');
+        }
+
+        function closeProjectModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+        }
+
+        // Portfolio Filtering
+        function filterPortfolio(category) {
+            const buttons = document.querySelectorAll('.portfolio-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-orange-500', 'text-white');
+                btn.classList.add('bg-white', 'dark:bg-graphite-800', 'text-gray-700', 'dark:text-gray-300', 'border', 'border-orange-200', 'dark:border-graphite-700');
+            });
+            event.target.classList.remove('bg-white', 'dark:bg-graphite-800', 'text-gray-700', 'dark:text-gray-300', 'border', 'border-orange-200', 'dark:border-graphite-700');
+            event.target.classList.add('bg-orange-500', 'text-white');
+
+            const items = document.querySelectorAll('.portfolio-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
